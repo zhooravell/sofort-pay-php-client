@@ -1,3 +1,3 @@
-Centrobill Sofort Pay Gateway
+Sofort Pay Gateway
 =============================
-> Sofort Pay api wrapper.
+> Sofort Pay api php wrapper.
