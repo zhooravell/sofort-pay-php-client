@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace SofortPay\Exception;
 
 /**
- * Class InvalidTransactionIdException.
+ * Class InvalidTransactionIDException.
  */
-final class InvalidTransactionIdException extends \Exception implements SofortPayException
+final class InvalidTransactionIDException extends \Exception implements SofortPayException
 {
     /**
-     * @return InvalidTransactionIdException
+     * @return InvalidTransactionIDException
      */
     public static function emptyTransactionID()
     {

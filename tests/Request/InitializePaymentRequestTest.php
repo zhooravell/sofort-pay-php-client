@@ -19,7 +19,7 @@ class InitializePaymentRequestTest extends TestCase
 {
     /**
      * @throws \SofortPay\Exception\InvalidLanguageException
-     * @throws \SofortPay\Exception\InvalidTransactionIdException
+     * @throws \SofortPay\Exception\InvalidTransactionIDException
      * @throws \SofortPay\Exception\InvalidUrlException
      */
     public function test()

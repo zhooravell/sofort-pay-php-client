@@ -35,7 +35,7 @@ class InitializePaymentTest extends TestCase
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SofortPay\Exception\InvalidAPIKeyException
      * @throws \SofortPay\Exception\InvalidResponseBodyException
-     * @throws \SofortPay\Exception\InvalidTransactionIdException
+     * @throws \SofortPay\Exception\InvalidTransactionIDException
      */
     public function testSuccess()
     {
@@ -57,7 +57,7 @@ class InitializePaymentTest extends TestCase
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SofortPay\Exception\InvalidAPIKeyException
      * @throws \SofortPay\Exception\InvalidResponseBodyException
-     * @throws \SofortPay\Exception\InvalidTransactionIdException
+     * @throws \SofortPay\Exception\InvalidTransactionIDException
      */
     public function testFail()
     {

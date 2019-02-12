@@ -6,7 +6,7 @@ namespace SofortPay\Tests\ValueObject;
 
 use PHPUnit\Framework\TestCase;
 use SofortPay\ValueObject\TransactionID;
-use SofortPay\Exception\InvalidTransactionIdException;
+use SofortPay\Exception\InvalidTransactionIDException;
 
 /**
  * Class TransactionIdTest.
@@ -14,7 +14,7 @@ use SofortPay\Exception\InvalidTransactionIdException;
 class TransactionIdTest extends TestCase
 {
     /**
-     * @throws InvalidTransactionIdException
+     * @throws InvalidTransactionIDException
      */
     public function testSuccess()
     {
@@ -25,11 +25,11 @@ class TransactionIdTest extends TestCase
     }
 
     /**
-     * @throws InvalidTransactionIdException
+     * @throws InvalidTransactionIDException
      */
     public function testEmptyValue()
     {
-        self::expectException(InvalidTransactionIdException::class);
+        self::expectException(InvalidTransactionIDException::class);
         self::expectExceptionMessage('Transaction ID should not be blank.');
 
         new TransactionID(' ');

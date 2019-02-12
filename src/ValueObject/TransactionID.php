@@ -3,7 +3,7 @@
 namespace SofortPay\ValueObject;
 
 use SofortPay\ValueObject\Traits\ValueToStringTrait;
-use SofortPay\Exception\InvalidTransactionIdException;
+use SofortPay\Exception\InvalidTransactionIDException;
 
 /**
  * Value object for transaction id.
@@ -19,14 +19,14 @@ class TransactionID
     /**
      * @param string $value
      *
-     * @throws InvalidTransactionIdException
+     * @throws InvalidTransactionIDException
      */
     public function __construct($value)
     {
         $value = trim($value);
 
         if (empty($value)) {
-            throw InvalidTransactionIdException::emptyTransactionID();
+            throw InvalidTransactionIDException::emptyTransactionID();
         }
 
         $this->value = $value;
