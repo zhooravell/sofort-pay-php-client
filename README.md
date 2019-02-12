@@ -1,2 +1,3 @@
-# sofort-pay-php-client
-Sofort Pay api php wrapper
+Centrobill Sofort Pay Gateway
+=============================
+> Sofort Pay api wrapper.

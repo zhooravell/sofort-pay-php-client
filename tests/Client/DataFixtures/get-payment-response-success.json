@@ -1,0 +1,35 @@
+{
+  "amount": 10.5,
+  "currency_id": "EUR",
+  "purpose": "Order ID: 1234",
+  "metadata": {
+    "key1": "value1",
+    "key2": "value2",
+    "key3": "value3"
+  },
+  "language": "de",
+  "sender": {
+    "holder": "John Doe",
+    "iban": "DE04888888880087654321",
+    "bic": "TESTDE88XXX",
+    "bank_name": "Test Bank",
+    "country_id": "DE"
+  },
+  "success_url": "https://example.com/success",
+  "abort_url": "https://example.com/abort",
+  "webhook_url": "https://example.com/webhook",
+  "payform_code": "default",
+  "recipient": {
+    "holder": "John Doe",
+    "iban": "DE04888888880087654321",
+    "bic": "TESTDE88XXX",
+    "bank_name": "Test Bank",
+    "country_id": "DE",
+    "street": "string",
+    "city": "string",
+    "zip": "string"
+  },
+  "uuid": "6d4cb746-ca71-442f-802a-0bdb7c0b2be1",
+  "status": "PENDING",
+  "testmode": false
+}
