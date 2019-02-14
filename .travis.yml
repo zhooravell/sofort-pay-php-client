@@ -20,7 +20,7 @@ install:
   - composer install
 
 script:
-  - phpunit
+  - vendor/phpunit/phpunit/phpunit
 
 matrix:
   fast_finish: true
