@@ -1,0 +1,36 @@
+language: php
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+php:
+  - 7.1
+  - 7.2
+  - 7.3
+  - hhvm
+  - nightly
+
+before_install:
+  - composer self-update
+
+install:
+  - composer install
+
+script:
+  - phpunit
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.1
+    - php: 7.2
+    - php: 7.3
+  allow_failures:
+    - php: hhvm
+    - php: nightly
+
+notifications:
+  email: false
