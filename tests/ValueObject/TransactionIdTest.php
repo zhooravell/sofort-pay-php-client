@@ -21,7 +21,7 @@ class TransactionIdTest extends TestCase
         $value = 'test123';
         $transactionId = new TransactionID($value);
 
-        self::assertEquals($value, (string) $transactionId);
+        $this->assertEquals($value, (string) $transactionId);
     }
 
     /**
@@ -29,8 +29,8 @@ class TransactionIdTest extends TestCase
      */
     public function testEmptyValue()
     {
-        self::expectException(InvalidTransactionIDException::class);
-        self::expectExceptionMessage('Transaction ID should not be blank.');
+        $this->expectException(InvalidTransactionIDException::class);
+        $this->expectExceptionMessage('Transaction ID should not be blank.');
 
         new TransactionID(' ');
     }

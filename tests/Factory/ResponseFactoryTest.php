@@ -104,7 +104,7 @@ class ResponseFactoryTest extends TestCase
         $this->assertEquals('https://example.com/abort', $result->get('abort_url'));
         $this->assertEquals('default', $result->get('payform_code'));
         $this->assertEquals('6d4cb746-ca71-442f-802a-0bdb7c0b2be1', $result->get('uuid'));
-        $this->assertEquals(false, $result->get('testmode'));
+        $this->assertFalse($result->get('testmode'));
         $this->assertEquals('X-Paycode-Resource', $result->get('Paycode-Resource'));
         $this->assertEquals(100, $result->get('RateLimit-Limit'));
         $this->assertEquals(99, $result->get('RateLimit-Remaining'));

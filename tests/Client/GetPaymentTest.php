@@ -42,7 +42,7 @@ class GetPaymentTest extends TestCase
 
         $response = $client->getPayment(Uuid::uuid4());
 
-        self::assertEquals('6d4cb746-ca71-442f-802a-0bdb7c0b2be1', $response->uuid);
+        $this->assertEquals('6d4cb746-ca71-442f-802a-0bdb7c0b2be1', $response->uuid);
     }
 
     /**
@@ -53,7 +53,7 @@ class GetPaymentTest extends TestCase
      */
     public function testFail()
     {
-        self::expectException(ClientException::class);
+        $this->expectException(ClientException::class);
 
         $client = new Client(['handler' => $this->failSidMockHandler]);
         $client = new SofortPayClient($client, new APIKey('943f288f-1c48-43b2-a082-efd1ec8bdc9e'));
@@ -64,7 +64,7 @@ class GetPaymentTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

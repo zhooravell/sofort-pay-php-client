@@ -31,7 +31,7 @@ class InitializePaymentRequestTest extends TestCase
             $parser->parse('1000000.51', 'EUR')
         );
 
-        self::assertEquals(
+        $this->assertEquals(
             [
                 'purpose' => 'Order ID: e45dcd16-030e-4e33-94e0-e34a097a7428',
                 'currency_id' => 'EUR',
@@ -50,7 +50,7 @@ class InitializePaymentRequestTest extends TestCase
             ->setLanguage(new Language('en'))
         ;
 
-        self::assertEquals(
+        $this->assertEquals(
             [
                 'purpose' => 'Order ID: e45dcd16-030e-4e33-94e0-e34a097a7428',
                 'currency_id' => 'EUR',
@@ -66,6 +66,6 @@ class InitializePaymentRequestTest extends TestCase
             $request->getPayload()
         );
 
-        self::assertInstanceOf(InitializePaymentRequest::class, $res);
+        $this->assertInstanceOf(InitializePaymentRequest::class, $res);
     }
 }
