@@ -49,7 +49,7 @@ class DeletePaymentTest extends TestCase
      */
     public function testFail()
     {
-        self::expectException(ClientException::class);
+        $this->expectException(ClientException::class);
 
         $client = new Client(['handler' => $this->failSidMockHandler]);
         $client = new SofortPayClient($client, new APIKey('943f288f-1c48-43b2-a082-efd1ec8bdc9e'));
@@ -60,7 +60,7 @@ class DeletePaymentTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

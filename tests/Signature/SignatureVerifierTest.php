@@ -24,7 +24,7 @@ class SignatureVerifierTest extends TestCase
         $xPayloadSignature = 'v1=b95ac0a6fbb0f868eb2e66fafbc79bc1e31995b0773b78de515c9c1dc5d7038a';
         $json = file_get_contents(__DIR__ . '/DataFixtures/success-signature-verify.json');
 
-        self::assertTrue($verifier->verify($xPayloadSignature, $json));
+        $this->assertTrue($verifier->verify($xPayloadSignature, $json));
     }
 
     /**
@@ -38,6 +38,6 @@ class SignatureVerifierTest extends TestCase
         $xPayloadSignature = 'v1=b95ac0a6fbb0f868eb2e66fafbc79bc1e31995b0773b78de515c9c1dc5d7038a';
         $json = file_get_contents(__DIR__ . '/DataFixtures/fail-signature-verify.json');
 
-        self::assertFalse($verifier->verify($xPayloadSignature, $json));
+        $this->assertFalse($verifier->verify($xPayloadSignature, $json));
     }
 }

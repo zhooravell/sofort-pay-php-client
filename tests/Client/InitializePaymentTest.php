@@ -49,8 +49,8 @@ class InitializePaymentTest extends TestCase
 
         $response = $client->initializePayment($request);
 
-        self::assertEquals('6d4cb746-ca71-442f-802a-0bdb7c0b2be1', $response->uuid);
-        self::assertEquals('https://wizard.sofort-pay.com/wizard/c6e48a82-a524-403b-8760-b6d146519efa', $response->get('Payment-Form'));
+        $this->assertEquals('6d4cb746-ca71-442f-802a-0bdb7c0b2be1', $response->uuid);
+        $this->assertEquals('https://wizard.sofort-pay.com/wizard/c6e48a82-a524-403b-8760-b6d146519efa', $response->get('Payment-Form'));
     }
 
     /**
@@ -61,7 +61,7 @@ class InitializePaymentTest extends TestCase
      */
     public function testFail()
     {
-        self::expectException(ClientException::class);
+        $this->expectException(ClientException::class);
 
         $client = new Client(['handler' => $this->failSidMockHandler]);
         $client = new SofortPayClient($client, new APIKey('943f288f-1c48-43b2-a082-efd1ec8bdc9e'));
@@ -77,7 +77,7 @@ class InitializePaymentTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

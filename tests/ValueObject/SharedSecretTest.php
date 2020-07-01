@@ -21,7 +21,7 @@ class SharedSecretTest extends TestCase
         $value = 'test123';
         $sharedSecret = new SharedSecret($value);
 
-        self::assertEquals($value, (string) $sharedSecret);
+        $this->assertEquals($value, (string) $sharedSecret);
     }
 
     /**
@@ -29,8 +29,8 @@ class SharedSecretTest extends TestCase
      */
     public function testEmptyValue()
     {
-        self::expectException(InvalidSharedSecretException::class);
-        self::expectExceptionMessage('WebHook shared secret should not be blank.');
+        $this->expectException(InvalidSharedSecretException::class);
+        $this->expectExceptionMessage('WebHook shared secret should not be blank.');
 
         new SharedSecret(' ');
     }

@@ -18,8 +18,8 @@ class UrlTest extends TestCase
      */
     public function testEmpty()
     {
-        self::expectException(InvalidUrlException::class);
-        self::expectExceptionMessage('"" is not a valid url.');
+        $this->expectException(InvalidUrlException::class);
+        $this->expectExceptionMessage('"" is not a valid url.');
 
         new Url('');
     }
@@ -29,8 +29,8 @@ class UrlTest extends TestCase
      */
     public function testInvalidMaxLength()
     {
-        self::expectException(InvalidUrlException::class);
-        self::expectExceptionMessage('URL is too long. It should have 2048 characters or less.');
+        $this->expectException(InvalidUrlException::class);
+        $this->expectExceptionMessage('URL is too long. It should have 2048 characters or less.');
 
         new Url(str_repeat('a', 2500));
     }
@@ -43,7 +43,7 @@ class UrlTest extends TestCase
         $url = 'https://api.com';
         $baseApiUrl = new Url($url);
 
-        self::assertEquals($url, (string) $baseApiUrl);
+        $this->assertEquals($url, (string) $baseApiUrl);
     }
 
     /**
@@ -51,8 +51,8 @@ class UrlTest extends TestCase
      */
     public function testInvalidUrl()
     {
-        self::expectException(InvalidUrlException::class);
-        self::expectExceptionMessage('"localhost" is not a valid url.');
+        $this->expectException(InvalidUrlException::class);
+        $this->expectExceptionMessage('"localhost" is not a valid url.');
 
         new Url('localhost');
     }

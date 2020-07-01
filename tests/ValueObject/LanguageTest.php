@@ -24,7 +24,7 @@ class LanguageTest extends TestCase
     {
         $currency = new Language($value);
 
-        self::assertEquals($value, (string) $currency);
+        $this->assertEquals($value, (string) $currency);
     }
 
     /**
@@ -45,8 +45,8 @@ class LanguageTest extends TestCase
      */
     public function testInvalidValue()
     {
-        self::expectException(InvalidLanguageException::class);
-        self::expectExceptionMessage('Not accepted language by Sofort Pay.');
+        $this->expectException(InvalidLanguageException::class);
+        $this->expectExceptionMessage('Not accepted language by Sofort Pay.');
 
         new Language('test');
     }

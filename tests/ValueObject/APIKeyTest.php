@@ -21,7 +21,7 @@ class APIKeyTest extends TestCase
         $value = '51930bcb-0028-4320-8932-13731f21fc28';
         $APIKey = new APIKey($value);
 
-        self::assertEquals($value, (string) $APIKey);
+        $this->assertEquals($value, (string) $APIKey);
     }
 
     /**
@@ -29,8 +29,8 @@ class APIKeyTest extends TestCase
      */
     public function testInvalidValue()
     {
-        self::expectException(InvalidAPIKeyException::class);
-        self::expectExceptionMessage('API key should be valid UUID.');
+        $this->expectException(InvalidAPIKeyException::class);
+        $this->expectExceptionMessage('API key should be valid UUID.');
 
         new APIKey('test');
     }
