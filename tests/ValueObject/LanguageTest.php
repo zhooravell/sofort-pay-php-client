@@ -24,7 +24,7 @@ class LanguageTest extends TestCase
     {
         $currency = new Language($value);
 
-        $this->assertEquals($value, (string) $currency);
+        $this->assertSame($value, (string) $currency);
     }
 
     /**

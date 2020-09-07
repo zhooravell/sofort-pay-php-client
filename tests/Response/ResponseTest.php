@@ -177,7 +177,7 @@ class ResponseTest extends TestCase
         $userId = 111;
         $response = new Response(['userId' => $userId]);
 
-        $this->assertEquals($userId, $response->userId);
+        $this->assertSame($userId, $response->userId);
     }
 
     public function testGetNotExistsPropertyValue()
@@ -199,9 +199,9 @@ class ResponseTest extends TestCase
             ],
         ]);
 
-        $this->assertEquals($street, $response->get('address.street'));
-        $this->assertEquals($userId, $response->userId);
-        $this->assertEquals($userId, $response->get('userId'));
+        $this->assertSame($street, $response->get('address.street'));
+        $this->assertSame($userId, $response->userId);
+        $this->assertSame($userId, $response->get('userId'));
         $this->assertEquals(['street' => $street], $response->address);
     }
 }

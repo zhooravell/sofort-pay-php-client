@@ -21,7 +21,7 @@ class APIKeyTest extends TestCase
         $value = '51930bcb-0028-4320-8932-13731f21fc28';
         $APIKey = new APIKey($value);
 
-        $this->assertEquals($value, (string) $APIKey);
+        $this->assertSame($value, (string) $APIKey);
     }
 
     /**

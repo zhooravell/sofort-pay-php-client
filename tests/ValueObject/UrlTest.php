@@ -43,7 +43,7 @@ class UrlTest extends TestCase
         $url = 'https://api.com';
         $baseApiUrl = new Url($url);
 
-        $this->assertEquals($url, (string) $baseApiUrl);
+        $this->assertSame($url, (string) $baseApiUrl);
     }
 
     /**

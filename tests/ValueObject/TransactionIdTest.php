@@ -21,7 +21,7 @@ class TransactionIdTest extends TestCase
         $value = 'test123';
         $transactionId = new TransactionID($value);
 
-        $this->assertEquals($value, (string) $transactionId);
+        $this->assertSame($value, (string) $transactionId);
     }
 
     /**
