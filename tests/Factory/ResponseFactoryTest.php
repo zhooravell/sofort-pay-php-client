@@ -33,19 +33,19 @@ class ResponseFactoryTest extends TestCase
 
         $result = ResponseFactory::fromPsrResponse(new Response(200, $headers, $body));
 
-        $this->assertEquals(10.5, $result->get('amount'));
-        $this->assertEquals('EUR', $result->get('currency_id'));
-        $this->assertEquals('Order ID: 1234', $result->get('purpose'));
-        $this->assertEquals('de', $result->get('language'));
-        $this->assertEquals('https://example.com/success', $result->get('success_url'));
-        $this->assertEquals('https://example.com/webhook', $result->get('webhook_url'));
-        $this->assertEquals('https://example.com/abort', $result->get('abort_url'));
-        $this->assertEquals('default', $result->get('payform_code'));
-        $this->assertEquals('6d4cb746-ca71-442f-802a-0bdb7c0b2be1', $result->get('uuid'));
-        $this->assertEquals('X-Payment-Form', $result->get('Payment-Form'));
-        $this->assertEquals('Location', $result->get('Location'));
-        $this->assertEquals(100, $result->get('RateLimit-Limit'));
-        $this->assertEquals(99, $result->get('RateLimit-Remaining'));
+        $this->assertSame(10.5, $result->get('amount'));
+        $this->assertSame('EUR', $result->get('currency_id'));
+        $this->assertSame('Order ID: 1234', $result->get('purpose'));
+        $this->assertSame('de', $result->get('language'));
+        $this->assertSame('https://example.com/success', $result->get('success_url'));
+        $this->assertSame('https://example.com/webhook', $result->get('webhook_url'));
+        $this->assertSame('https://example.com/abort', $result->get('abort_url'));
+        $this->assertSame('default', $result->get('payform_code'));
+        $this->assertSame('6d4cb746-ca71-442f-802a-0bdb7c0b2be1', $result->get('uuid'));
+        $this->assertSame('X-Payment-Form', $result->get('Payment-Form'));
+        $this->assertSame('Location', $result->get('Location'));
+        $this->assertSame(100, $result->get('RateLimit-Limit'));
+        $this->assertSame(99, $result->get('RateLimit-Remaining'));
         $this->assertEquals(
             [
                 'key1' => 'value1',
@@ -95,19 +95,19 @@ class ResponseFactoryTest extends TestCase
 
         $result = ResponseFactory::fromPsrResponse(new Response(200, $headers, $body));
 
-        $this->assertEquals(10.5, $result->get('amount'));
-        $this->assertEquals('EUR', $result->get('currency_id'));
-        $this->assertEquals('Order ID: 1234', $result->get('purpose'));
-        $this->assertEquals('de', $result->get('language'));
-        $this->assertEquals('https://example.com/success', $result->get('success_url'));
-        $this->assertEquals('https://example.com/webhook', $result->get('webhook_url'));
-        $this->assertEquals('https://example.com/abort', $result->get('abort_url'));
-        $this->assertEquals('default', $result->get('payform_code'));
-        $this->assertEquals('6d4cb746-ca71-442f-802a-0bdb7c0b2be1', $result->get('uuid'));
+        $this->assertSame(10.5, $result->get('amount'));
+        $this->assertSame('EUR', $result->get('currency_id'));
+        $this->assertSame('Order ID: 1234', $result->get('purpose'));
+        $this->assertSame('de', $result->get('language'));
+        $this->assertSame('https://example.com/success', $result->get('success_url'));
+        $this->assertSame('https://example.com/webhook', $result->get('webhook_url'));
+        $this->assertSame('https://example.com/abort', $result->get('abort_url'));
+        $this->assertSame('default', $result->get('payform_code'));
+        $this->assertSame('6d4cb746-ca71-442f-802a-0bdb7c0b2be1', $result->get('uuid'));
         $this->assertFalse($result->get('testmode'));
-        $this->assertEquals('X-Paycode-Resource', $result->get('Paycode-Resource'));
-        $this->assertEquals(100, $result->get('RateLimit-Limit'));
-        $this->assertEquals(99, $result->get('RateLimit-Remaining'));
+        $this->assertSame('X-Paycode-Resource', $result->get('Paycode-Resource'));
+        $this->assertSame(100, $result->get('RateLimit-Limit'));
+        $this->assertSame(99, $result->get('RateLimit-Remaining'));
         $this->assertEquals(
             [
                 'key1' => 'value1',

@@ -21,7 +21,7 @@ class SharedSecretTest extends TestCase
         $value = 'test123';
         $sharedSecret = new SharedSecret($value);
 
-        $this->assertEquals($value, (string) $sharedSecret);
+        $this->assertSame($value, (string) $sharedSecret);
     }
 
     /**

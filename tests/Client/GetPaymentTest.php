@@ -42,7 +42,7 @@ class GetPaymentTest extends TestCase
 
         $response = $client->getPayment(Uuid::uuid4());
 
-        $this->assertEquals('6d4cb746-ca71-442f-802a-0bdb7c0b2be1', $response->uuid);
+        $this->assertSame('6d4cb746-ca71-442f-802a-0bdb7c0b2be1', $response->uuid);
     }
 
     /**
